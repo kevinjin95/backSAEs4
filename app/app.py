@@ -18,7 +18,7 @@ def create_app():
   CORS(app)
 
   with app.app_context():
-    from .controllers.Task_controller import TaskController
+    from .controllers.Event_controller import EventController
     db.create_all()
 
   return app
