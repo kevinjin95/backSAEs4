@@ -8,7 +8,10 @@ class EventSchema(ma.Schema):
       'eventStart', 
       'eventEnd', 
       'eventLocation', 
-      'eventDescription', 
+      'eventDescription',
+      'eventYear',
+      'eventMonth',
+      'eventDay', 
       'is_executed'
       )
 
