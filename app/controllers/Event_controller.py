@@ -33,9 +33,9 @@ class EventController:
       data.get('eventEnd'),
       data.get('eventLocation'),
       data.get('eventDescription'),
-      data.get('eventYear'),
-      data.get('eventMonth'),
-      data.get('eventDay'),
+      # data.get('eventYear'),
+      # data.get('eventMonth'),
+      # data.get('eventDay'),
       data.get('is_executed')
     )
     db.session.add(new_event_item)
@@ -57,9 +57,9 @@ class EventController:
     event.eventEnd = data.get('eventEnd', event.eventEnd)
     event.eventLocation = data.get('eventLocation', event.eventLocation)
     event.eventDescription = data.get('eventDescription', event.eventDescription)
-    event.eventYear = data.get('eventYear', event.eventYear)
-    event.eventMonth = data.get('eventMonth', event.eventMonth)
-    event.eventDay = data.get('eventDay', event.eventDay)
+    # event.eventYear = data.get('eventYear', event.eventYear)
+    # event.eventMonth = data.get('eventMonth', event.eventMonth)
+    # event.eventDay = data.get('eventDay', event.eventDay)
     event.is_executed = data.get('is_executed', event.is_executed)
     db.session.commit()
     return jsonify({"success": "La tâche a été modifiée"})
