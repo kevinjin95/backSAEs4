@@ -23,9 +23,10 @@ class EventController:
   def create_event():
     data = request.json
     eventName = data.get('eventName')
+    eventStart = data.get('eventStart')
     if not eventName: return jsonify({"error": "Le nom de la tâche est obligatoire"}), 400
     
-    if EventItem.query.filter_by(eventName=eventName).first(): return jsonify({"error": "Cette tâche existe déjà"}), 400
+    if EventItem.query.filter_by(eventName=eventName).first() and EventItem.query.filter_by(eventStart=eventStart).first(): return jsonify({"error": "Cette tâche existe déjà"}), 400
 
     new_event_item = EventItem(
       eventName,
