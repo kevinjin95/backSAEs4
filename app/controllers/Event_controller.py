@@ -9,8 +9,8 @@ from app.schemas.schemas import Event_schema, Events_schema
 class EventController:
   @app.route('/event', methods=['GET'])
   def get_events():
-    all_events = EventItem.query.all()
-    result = Events_schema.dump(all_events)
+    all_events = EventItem.query.all()#localhost/event liste de tous les listes
+    result = Events_schema.dump(all_events)#objet model et les transformer en json grâce à marshmallow
     return jsonify(result)
 
   @app.route('/event/<id>', methods=['GET'])
